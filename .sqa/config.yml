@@ -1,0 +1,58 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/cessda/cessda.cmv.benchmark-runner:
+      branch: main
+      repo: https://github.com/cessda/cessda.cmv.benchmark-runner.git
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/cessda/cessda.cmv.benchmark-runner git:
+        commands:
+        - /usr/bin/env sh .sqa/script.dorky-turquoise-hyrax.sh
+        container: qc.acc_wiggy-tan-moth
+  QC.Doc:
+    repos:
+      github.com/cessda/cessda.cmv.benchmark-runner find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.squeaky-cerulean-fly.sh
+        container: qc.doc_cozy-scarlet-heron
+      github.com/cessda/cessda.cmv.benchmark-runner git:
+        commands:
+        - /usr/bin/env sh .sqa/script.stinky-lemon-eagle.sh
+        container: qc.doc_bumpy-amaranth-bulldog
+      github.com/cessda/cessda.cmv.benchmark-runner markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-auburn-lizard.sh
+        container: qc.doc_woolly-jade-alligator
+  QC.Lic:
+    repos:
+      github.com/cessda/cessda.cmv.benchmark-runner licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.smelly-burgundy-rottweiler.sh
+        container: qc.lic_shabby-silver-dugong
+  QC.Met:
+    repos:
+      github.com/cessda/cessda.cmv.benchmark-runner cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.thirsty-zucchini-snake.sh
+        container: qc.met_gamy-jade-butterfly
+  QC.Sty:
+    repos:
+      github.com/cessda/cessda.cmv.benchmark-runner checkstyle:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-pear-butterfly.sh
+        container: qc.sty_crappy-amber-coral
+  QC.Ver:
+    repos:
+      github.com/cessda/cessda.cmv.benchmark-runner get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.scaly-salmon-caterpillar.sh
+        container: qc.ver_beady-flax-monkey
+timeout: 5400
