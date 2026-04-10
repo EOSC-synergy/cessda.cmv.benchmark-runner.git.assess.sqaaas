@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: feature/pynblint
+      branch: feature/pynblint_fix
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/cessda/cessda.cmv.benchmark-runner:
       branch: main
@@ -15,44 +15,44 @@ sqa_criteria:
     repos:
       github.com/cessda/cessda.cmv.benchmark-runner git:
         commands:
-        - /usr/bin/env sh .sqa/script.skanky-buff-tapir.sh
-        container: qc.acc_foggy-goldenrod-blue
+        - /usr/bin/env sh .sqa/script.frumpy-cobalt-oriole.sh
+        container: qc.acc_ready-auburn-mole
   QC.Doc:
     repos:
       github.com/cessda/cessda.cmv.benchmark-runner find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.baggy-ivory-moose.sh
-        container: qc.doc_tacky-seashell-budgerigar
+        - /usr/bin/env sh .sqa/script.smelly-gamboge-urchin.sh
+        container: qc.doc_smelly-wisteria-dollar
       github.com/cessda/cessda.cmv.benchmark-runner git:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-champagne-dolphin.sh
-        container: qc.doc_flimsy-ultramarine-capybara
+        - /usr/bin/env sh .sqa/script.hasty-rust-woodlouse.sh
+        container: qc.doc_woozy-mustard-abyssinian
       github.com/cessda/cessda.cmv.benchmark-runner markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.shaky-cornflower-warthog.sh
-        container: qc.doc_frumpy-peach-guppy
+        - /usr/bin/env sh .sqa/script.foggy-bronze-ostrich.sh
+        container: qc.doc_muzzy-black-fossa
   QC.Lic:
     repos:
       github.com/cessda/cessda.cmv.benchmark-runner licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.thirsty-goldenrod-numbat.sh
-        container: qc.lic_hilly-tan-meerkat
+        - /usr/bin/env sh .sqa/script.randy-peach-horse.sh
+        container: qc.lic_snoopy-orange-lobster
   QC.Met:
     repos:
       github.com/cessda/cessda.cmv.benchmark-runner cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-thistle-uakari.sh
-        container: qc.met_clammy-sepia-vole
+        - /usr/bin/env sh .sqa/script.muggy-viridian-seal.sh
+        container: qc.met_flaky-cerise-tuatara
   QC.Sty:
     repos:
       github.com/cessda/cessda.cmv.benchmark-runner checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.pokey-magnolia-sparrow.sh
-        container: qc.sty_skinny-coral-bird
+        - /usr/bin/env sh .sqa/script.gloppy-apricot-otter.sh
+        container: qc.sty_baggy-vermilion-bear
   QC.Ver:
     repos:
       github.com/cessda/cessda.cmv.benchmark-runner get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.dorky-sangria-shrew.sh
-        container: qc.ver_woolly-persimmon-paradise
+        - /usr/bin/env sh .sqa/script.bumpy-jade-cat.sh
+        container: qc.ver_nerdy-bistre-angelfish
 timeout: 5400
